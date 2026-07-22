@@ -189,15 +189,10 @@ Il greedy seleziona un set di azioni completamente diverso nei seguenti scenari:
 **3. Δscore e costo utilizzato**
 Nonostante un baseline più basso, lo scenario a trust cloud ridotto produce un guadagno totale maggiore (+0.1881 vs +0.1145) a parità di budget disponibile (300). Un trust iniziale più basso lascia un margine di miglioramento più ampio ed economico da colmare tramite azioni a basso costo/alto guadagno marginale: il greedy si ferma infatti con un costo effettivamente utilizzato inferiore (240 vs 290).
 
-**4. Anomalia da verificare — possibile effetto soglia**
-Riducendo sia cloud che edge (0.9/0.9), il greedy ritorna a selezionare A9/A8/A7, ma con uno score finale peggiore (0.888772 contro ~0.98 negli altri scenari), a parità di costo (290). Se il valore di baseline sarà confermato (vedi avviso sopra), questo suggerirebbe un comportamento non monotono del greedy: in questo scenario specifico, la catena A1/A2/A5 potrebbe risultare più conveniente di A9/A8/A7, ma il greedy non lo rileva. Da confrontare con Brute Force.
+**4. Anomalia da verificare: possibile effetto soglia**
+Riducendo sia cloud che edge (a 0.9/0.9), il greedy ritorna a selezionare A9/A8/A7, ma con uno score finale peggiore (0.888772 contro ~0.98 negli altri scenari), a parità di costo (290). Se il valore di baseline sarà confermato (vedi sopra), questo suggerirebbe un comportamento non monotono del greedy: in questo scenario specifico, la catena A1/A2/A5 potrebbe risultare più conveniente di A9/A8/A7, ma il greedy non lo rileva (guarda sezione: Necessità del Ricalcolo Dinamico di $\Delta\text{score}$). Da confrontare anche con Brute Force.
 
 > OSSERVAZIONE: il test dimostra che il modello non è solo formalmente corretto ma anche comportamentalmente coerente rispetto a variazioni realistiche delle assunzioni di fiducia. Il punto 4, se confermato, fornirebbe inoltre un caso empirico diretto di sub-ottimalità del greedy, utile per la sezione di confronto greedy vs ottimo.
-
-**Prossimi passi**:
-- Testare su `weatherExampleWithTrust.pl`
-- Eseguire Brute Force sullo scenario `cloud=0.9, edge=0.9` e confrontare con il risultato greedy
-- Estendere l'analisi all'esempio `smartBuilding`
 
 --- 
 
