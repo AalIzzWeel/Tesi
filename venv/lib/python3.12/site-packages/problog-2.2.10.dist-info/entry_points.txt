@@ -1,0 +1,2 @@
+[console_scripts]
+problog = problog.tasks:main
