@@ -13,9 +13,3 @@ OSS: Formalizzato come variante di knapsack con vincoli di precedenza (NP-hard),
 
 TBC
 
-**Settimana 2: Riscrivere il Greedy e creare l'euristica** 
-* Riaddattare il greedy e testare
-* Primo run completo su smartBuilding con budget diversi
-* Capire come gestire l'eventuale budget residuo
-
-> Nota: due settimane SE non ci sono grandi problemi di debugging
